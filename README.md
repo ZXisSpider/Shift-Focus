@@ -1,8 +1,24 @@
 # Shift-Focus
 
-Shift-Focus 是一个 macOS 菜单栏小工具，用快捷键在多个显示器之间移动键盘焦点。
+> 一个 macOS 菜单栏小工具，用全局快捷键在多个显示器之间移动键盘焦点。
+
+[![macOS](https://img.shields.io/badge/macOS-13%2B-000000?style=flat-square&logo=apple)](https://www.apple.com/macos/)
+[![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://www.swift.org/)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
 它适合多屏工作流：当你在一块屏幕写代码、另一块屏幕看浏览器或文档时，可以不用先找鼠标、点窗口，再开始输入。
+
+GitHub Description 建议：
+
+```text
+macOS menu bar utility for moving keyboard focus across displays with global shortcuts.
+```
+
+推荐 Topics：
+
+```text
+macos, swift, menu-bar, accessibility, multi-monitor, productivity, keyboard-shortcuts
+```
 
 ## 功能
 
@@ -135,4 +151,4 @@ Assets/AppIcon.iconset/
 
 ## License
 
-暂未声明许可证。
+MIT License。详见 [LICENSE](LICENSE)。

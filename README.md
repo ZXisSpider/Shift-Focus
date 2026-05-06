@@ -1,23 +1,31 @@
 # Shift-Focus
 
-> 一个 macOS 菜单栏小工具，用全局快捷键在多个显示器之间移动键盘焦点。
+> 用快捷键把键盘焦点、鼠标光标和注意力一起切到目标显示器。
 
 [![macOS](https://img.shields.io/badge/macOS-13%2B-000000?style=flat-square&logo=apple)](https://www.apple.com/macos/)
 [![Swift](https://img.shields.io/badge/Swift-5.9%2B-F05138?style=flat-square&logo=swift&logoColor=white)](https://www.swift.org/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 
-它适合多屏工作流：当你在一块屏幕写代码、另一块屏幕看浏览器或文档时，可以不用先找鼠标、点窗口，再开始输入。
+Shift-Focus 是一个 macOS 菜单栏小工具，专门解决多屏工作时“键盘焦点还在另一块屏幕”的小摩擦。按下全局快捷键后，它会找到目标显示器上的合适窗口并激活它，可选地把鼠标光标移动到该窗口中心，同时显示一个简短 HUD 提示。
 
-GitHub Description 建议：
+## 为什么用它
 
-```text
-macOS menu bar utility for moving keyboard focus across displays with global shortcuts.
-```
+- 不用先找鼠标、点窗口，再开始输入。
+- 支持左右切屏，也支持直接跳到第 1 / 2 / 3 块显示器。
+- 可以让鼠标跟随焦点，窗口、光标和视觉提示保持在同一块屏幕。
 
-推荐 Topics：
+## 工作方式
 
-```text
-macos, swift, menu-bar, accessibility, multi-monitor, productivity, keyboard-shortcuts
+```mermaid
+flowchart LR
+    A["按下快捷键<br/>Ctrl + Option + ← / → / 1 / 2 / 3"] --> B["Shift-Focus<br/>判断目标显示器"]
+    B --> C{"目标屏有可聚焦窗口？"}
+    C -->|有| D["激活并置顶窗口"]
+    C -->|没有| E["使用目标屏中心作为 fallback"]
+    D --> F["移动鼠标到窗口中心<br/>(可在菜单栏关闭)"]
+    E --> G["移动鼠标到屏幕中心<br/>(可在菜单栏关闭)"]
+    F --> H["显示 HUD 提示"]
+    G --> H
 ```
 
 ## 功能
@@ -147,6 +155,20 @@ swift Scripts/generate_app_icon.swift
 ```text
 Assets/AppIcon.icns
 Assets/AppIcon.iconset/
+```
+
+## GitHub 元信息
+
+Description：
+
+```text
+macOS menu bar utility for moving keyboard focus across displays with global shortcuts.
+```
+
+推荐 Topics：
+
+```text
+macos, swift, menu-bar, accessibility, multi-monitor, productivity, keyboard-shortcuts
 ```
 
 ## License

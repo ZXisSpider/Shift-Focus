@@ -1,0 +1,10 @@
+.DS_Store
+.build/
+Shift-Focus.app/
+
+# Local editor / assistant settings
+.claude/
+
+# SwiftPM
+.swiftpm/
+Package.resolved
